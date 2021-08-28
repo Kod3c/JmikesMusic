@@ -1,0 +1,118 @@
+{
+  "page": {
+    "label": "TRANSLATE.PLUGIN_QOBUZ.QOBUZ_CONFIG_TITLE"
+  },
+  "sections": [
+    {
+      "id": "QOBUZ_SECTION",
+      "element": "section",
+      "label": "TRANSLATE.PLUGIN_QOBUZ.SECTION_QOBUZ_ACCOUNT",
+      "image": "music_service/qobuz/icons/qobuziconimage.png",
+      "hidden":false,
+      "content": [
+        {
+          "id":"qobuz_oauth",
+          "element": "button",
+          "label": "TRANSLATE.COMMON.CONNECT",
+          "description": "TRANSLATE.PLUGIN_QOBUZ.QOBUZ_CONNECT_DESC",
+          "onClick": {"type":"oauth", "performerUrl":"http://oauth-performer.dfs.volumio.org/qobuz","plugin":"music_service/qobuz", "scopes":["r_usr","w_usr","w_sub"]}
+        },
+        {
+          "id":"qobuz_logout",
+          "element": "button",
+          "label": "TRANSLATE.COMMON.LOGOUT",
+          "description": "TRANSLATE.PLUGIN_QOBUZ.QOBUZ_LOGOUT_DESC",
+          "hidden": true,
+          "onClick": {"type":"emit", "message":"callMethod", "data":{"endpoint":"music_service/qobuz","method":"logout","data":""}}
+        },
+        {
+          "id":"qobuz_free_trial",
+          "element": "button",
+          "label": "TRANSLATE.PLUGIN_QOBUZ.QOBUZ_FREE_TRIAL",
+          "description": "TRANSLATE.PLUGIN_QOBUZ.QOBUZ_FREE_TRIAL_DESC",
+          "onClick": {"type":"openUrl", "url":"http://www.qobuz.com/store-router/pages/volumio"},
+          "hidden":true
+        }
+      ]
+    },{
+      "id": "QOBUZ_QUALITY_SECTION",
+      "element": "section",
+      "hidden":"true",
+      "onSave": {
+        "type": "controller",
+        "endpoint": "music_service/qobuz",
+        "method": "saveConfig"
+      },
+      "saveButton": {
+        "label": "TRANSLATE.COMMON.SAVE",
+        "data": [
+          "qobuz_quality","qobuz_search_results"
+        ]
+      },
+      "content": [
+        {
+          "id": "qobuz_quality",
+          "element": "select",
+          "doc": "TRANSLATE.PLAYBACK_OPTIONS.SQ_QUALITY_DESC",
+          "label": "TRANSLATE.PLAYBACK_OPTIONS.SQ_QUALITY_TITLE",
+          "value":  {
+            "value":100,
+            "label": "TRANSLATE.PLAYBACK_OPTIONS.SQ_HIGHEST_POSSIBLE"
+          },
+          "options": [
+            {
+              "value":5,
+              "label": "TRANSLATE.PLAYBACK_OPTIONS.SQ_MP3_320"
+            },{
+              "value":6,
+              "label": "TRANSLATE.PLAYBACK_OPTIONS.SQ_FLAC_LOSSLESS"
+            },{
+              "value":7,
+              "label": "TRANSLATE.PLAYBACK_OPTIONS.SQ_FLAC_HIRES_96"
+            },{
+              "value":27,
+              "label": "TRANSLATE.PLAYBACK_OPTIONS.SQ_FLAC_HIRES_192"
+            },{
+              "value":100,
+              "label": "TRANSLATE.PLAYBACK_OPTIONS.SQ_HIGHEST_POSSIBLE"
+            }
+          ]
+        },
+        {
+          "id": "qobuz_search_results",
+          "element": "select",
+          "doc": "TRANSLATE.COMMON.SEARCH_RESULTS_DESC",
+          "label": "TRANSLATE.COMMON.SEARCH_RESULTS_TITLE",
+          "value":  {
+            "value":10,
+            "label": "10"
+          },
+          "options": [
+            {
+              "value":5,
+              "label": "5"
+            },
+            {
+              "value":10,
+              "label": "10"
+            },{
+              "value":20,
+              "label": "20"
+            },{
+              "value":50,
+              "label": "50"
+            },{
+              "value":100,
+              "label": "100"
+            },{
+              "value":200,
+              "label": "200"
+            }
+          ]
+        }
+
+      ]
+    }
+    
+  ]
+}

@@ -1,0 +1,4 @@
+{
+  "debug":{"value":false,"type":"boolean"},
+  "cachingEnabled":{"value":true,"type":"boolean"}
+}

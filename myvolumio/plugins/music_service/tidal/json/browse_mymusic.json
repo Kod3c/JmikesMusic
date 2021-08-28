@@ -1,0 +1,40 @@
+{
+  "navigation": {
+    "lists": [
+      {
+        "availableListViews": [
+          "grid", "list"
+        ],
+        "items": [
+          {
+            "type": "item-no-menu",
+            "title": "TRANSLATE.VOLUMIO_CLOUD_TIDAL.TIDAL_ALBUMS",
+            "albumart": "/albumart?sourceicon=music_service/streaming_services/icons/tidal/tidalalbum.png",
+            "uri": "tidal://mymusic/albums"
+          },
+          {
+            "type": "item-no-menu",
+            "title": "TRANSLATE.VOLUMIO_CLOUD_TIDAL.TIDAL_ARTISTS",
+            "albumart": "/albumart?sourceicon=music_service/streaming_services/icons/tidal/tidalartist.png",
+            "uri": "tidal://mymusic/artists"
+          },
+          {
+            "type": "item-no-menu",
+            "title": "TRANSLATE.VOLUMIO_CLOUD_TIDAL.TIDAL_PLAYLISTS",
+            "albumart": "/albumart?sourceicon=music_service/streaming_services/icons/tidal/tidalplaylist.png",
+            "uri": "tidal://mymusic/playlists"
+          },
+          {
+            "type": "item-no-menu",
+            "title": "TRANSLATE.VOLUMIO_CLOUD_TIDAL.TIDAL_TRACKS",
+            "albumart": "/albumart?sourceicon=music_service/streaming_services/icons/tidal/tidaltrack.png",
+            "uri": "tidal://mymusic/tracks"
+          }
+        ]
+      }
+    ],
+    "prev": {
+      "uri": "tidal://"
+    }
+  }
+}

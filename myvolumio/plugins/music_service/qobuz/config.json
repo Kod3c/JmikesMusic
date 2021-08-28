@@ -1,0 +1,6 @@
+{
+    "maxSearchResults":{
+      "type": "number",
+      "value": 20
+    }
+  }

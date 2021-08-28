@@ -1,0 +1,23 @@
+{
+  "name": "tidalconnect",
+  "version": "1.0.0",
+  "description": "Plugin for Tidal connect in Volumio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mervinio",
+  "license": "ISC",
+  "volumio_info": {
+    "prettyName": "Tidal Connect",
+    "plugin_type": "music_service",
+    "boot_priority": 10,
+    "is_my_music_plugin": true
+  },
+  "dependencies": {
+    "fs-extra": "^0.28.0",
+    "kew": "^0.7.0",
+    "v-conf": "^1.4.0",
+    "require-from-string": "^2.0.2"
+  }
+}

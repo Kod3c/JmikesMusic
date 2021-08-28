@@ -1,0 +1,24 @@
+{
+  "name": "metavolumio",
+  "version": "1.0.0",
+  "description": "MetaVolumio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Volumio2",
+  "license": "ISC",
+  "volumio_info": {
+    "prettyName": "Metavolumio",
+    "plugin_type": "miscellanea",
+    "boot_priority": 10
+  },
+  "dependencies": {
+    "kew": "^0.7.0",
+    "socket.io-client": "^2.3.0",
+    "unirest": "^0.6.0",
+    "v-conf": "^1.4.2",
+    "node-cache": "^4.1.1",
+    "require-from-string": "^2.0.2"
+  }
+}

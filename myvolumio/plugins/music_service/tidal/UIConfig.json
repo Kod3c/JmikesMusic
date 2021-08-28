@@ -1,0 +1,118 @@
+{
+  "page": {
+    "label": "TRANSLATE.PLUGIN_TIDAL.TIDAL_CONFIG_TITLE"
+  },
+  "sections": [
+    {
+      "id": "TIDAL_SECTION",
+      "element": "section",
+      "label": "TRANSLATE.PLUGIN_TIDAL.SECTION_TIDAL_ACCOUNT",
+      "description": "TRANSLATE.PLUGIN_TIDAL.SECTION_TIDAL_ACCOUNT_DESC",
+      "hidden":false,
+      "image": "music_service/tidal/icons/tidalsectionimage.png",
+      "content": [
+        {
+          "id":"tidal_oauth",
+          "element": "button",
+          "label": "TRANSLATE.COMMON.CONNECT",
+          "description": "TRANSLATE.PLUGIN_TIDAL.TIDAL_CONNECT_DESC",
+          "onClick": {"type":"oauth", "performerUrl":"http://oauth-performer.dfs.volumio.org/tidal","plugin":"music_service/tidal", "scopes":["r_usr","w_usr","w_sub"]}
+        },
+        {
+          "id":"tidal_logout",
+          "element": "button",
+          "label": "TRANSLATE.COMMON.LOGOUT",
+          "description": "TRANSLATE.PLUGIN_TIDAL.TIDAL_LOGOUT_DESC",
+          "hidden": true,
+          "onClick": {"type":"emit", "message":"callMethod", "data":{"endpoint":"music_service/tidal","method":"logout","data":""}}
+        }
+      ]
+    },
+    {
+      "id": "TIDAL_QUALITY_SECTION",
+      "element": "section",
+      "hidden":"true",
+      "onSave": {
+        "type": "controller",
+        "endpoint": "music_service/tidal",
+        "method": "saveConfig"
+      },
+      "saveButton": {
+        "label": "TRANSLATE.COMMON.SAVE",
+        "data": [
+          "tidal_quality","tidal_search_results","mqa"
+        ]
+      },
+      "content": [
+        {
+          "id": "tidal_quality",
+          "element": "select",
+          "doc": "TRANSLATE.PLAYBACK_OPTIONS.SQ_QUALITY_DESC",
+          "label": "TRANSLATE.PLAYBACK_OPTIONS.SQ_QUALITY_TITLE",
+          "value":  {
+            "value":"HIGHEST_POSSIBLE",
+            "label": "TRANSLATE.PLAYBACK_OPTIONS.SQ_HIGHEST_POSSIBLE"
+          },
+          "options": [
+            {
+              "value":"LOW",
+              "label": "TRANSLATE.PLAYBACK_OPTIONS.SQ_LOW"
+            },{
+              "value":"HIGH",
+              "label": "TRANSLATE.PLAYBACK_OPTIONS.SQ_HIGH"
+            },{
+              "value":"LOSSLESS",
+              "label": "TRANSLATE.PLAYBACK_OPTIONS.SQ_LOSSLESS"
+            },{
+              "value":"HI_RES",
+              "label": "TRANSLATE.PLAYBACK_OPTIONS.SQ_HI_RES"
+            },{
+              "value":"HIGHEST_POSSIBLE",
+              "label": "TRANSLATE.PLAYBACK_OPTIONS.SQ_HIGHEST_POSSIBLE"
+            }
+          ]
+        },
+        {
+          "id": "tidal_search_results",
+          "element": "select",
+          "doc": "TRANSLATE.COMMON.SEARCH_RESULTS_DESC",
+          "label": "TRANSLATE.COMMON.SEARCH_RESULTS_TITLE",
+          "value":  {
+            "value":10,
+            "label": "10"
+          },
+          "options": [
+            {
+              "value":5,
+              "label": "5"
+            },
+            {
+              "value":10,
+              "label": "10"
+            },{
+              "value":20,
+              "label": "20"
+            },{
+              "value":50,
+              "label": "50"
+            },{
+              "value":100,
+              "label": "100"
+            },{
+              "value":200,
+              "label": "200"
+            }
+          ]
+        },
+        {
+          "id": "mqa",
+          "element": "switch",
+          "doc": "TRANSLATE.PLUGIN_TIDAL.MQA_DESCR",
+          "label": "TRANSLATE.PLUGIN_TIDAL.MQA_TITLE",
+          "value": true
+        }
+
+      ]
+    }
+  ]
+}

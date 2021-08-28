@@ -1,0 +1,9 @@
+{
+  "PLUGIN_TIDAL_CONNECT": {
+    "TIDAL_CONNECT_CONFIG_TITLE": "Tidal Connect",
+    "TIDAL_CONNECT_SECTION": "Tidal Connect",
+    "ENABLED_DESCR": "When enabed, find the Volumio device name in the Tidal App.",
+    "ENABLED_TITLE": "Enabled",
+    "SAVE": "Save"
+  }
+}

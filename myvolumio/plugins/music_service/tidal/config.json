@@ -1,0 +1,18 @@
+{
+    "maxSearchResults":{
+      "type": "number",
+      "value": 20
+    },
+    "audioQuality":{
+      "type": "string",
+      "value": "HIGHEST_POSSIBLE"
+    },
+    "audioQualityLabel":{
+      "type": "string",
+      "value": "HIGHEST_POSSIBLE"
+    },
+    "mqa":{
+      "type": "boolean",
+      "value": true
+    }
+  }
